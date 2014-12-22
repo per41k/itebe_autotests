@@ -6,7 +6,7 @@ class MainPage(object):
         self.driver = driver
         self.username = driver.find_element_by_xpath("//div[@class='est']") #логин юзера, отображается вверху справа
         self.quit_button = driver.find_element_by_xpath("//a[text()='Выход']") #кнопка выхода
-        self.pers_cab = driver.find_element_by_xpath("//a[text()='Личный кабинет']") #
+        self.pers_cab = driver.find_element_by_xpath("//a[text()='Личный кабинет']") #ссылка на ЛК
 
     #получить логин текущего юзера
     def getUsername(self): return self.username.text
