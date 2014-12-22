@@ -41,7 +41,7 @@ class Test(unittest.TestCase):
         LeftMenu(self.driver).getCurrentRole()
 
         role="продавец"
-        # ставим роль "продевец"
+        # ставим роль "продавец"
         LeftMenu(self.driver).setRole(role)
         # проверяем, изменилась ли роль на указанную
         assert role in LeftMenu(self.driver).getCurrentRole()
@@ -61,7 +61,7 @@ class Test(unittest.TestCase):
             RubricsPage(self.driver).setRole(role)
         except StaleElementReferenceException:
             pass
-        # проверяем, что поль изменилась
+        # проверяем, что роль изменилась
         assert role in LeftMenu(self.driver).getCurrentRole()
 
         advert="Suzuki"
@@ -126,10 +126,10 @@ class Test(unittest.TestCase):
         LeftMenu(self.driver).ClickMenu3(flmenu, slmenu, thlmenu)
         RubricsPage(self.driver).ClickRubrick(advert)
 
-        #находим наше объявление по названию модели и цени, и кликаем по нему
+        #находим наше объявление по названию модели и цене, и кликаем по нему
         CustAdPage(self.driver).clickAdvert(model, price)
 
-        #отправляем сообщение владельцу объявление
+        #отправляем сообщение владельцу объявления
         mess="i want sell scooter to you!"
         AdvertPage(self.driver).sendMess(mess)
 
