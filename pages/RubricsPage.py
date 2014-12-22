@@ -17,7 +17,7 @@ class RubricsPage(object):
         current_role = LeftMenu(self.driver).getCurrentRole()
         if role != current_role: self.change_role_button.click()
 
-    #метод получает название рубрики и кликает по "+" для перехода на страницу создания объявления в этой рубрике
+    #метод получает название подрубрики и кликает по "+" для перехода на страницу создания объявления в этой подрубрике
     def addAdvert(self, rubric):
         advert = self.driver.find_element_by_xpath("//a[text()='"+rubric+"']/..//span[text()='+']")
         WebDriverWait(self.driver, 10).until(lambda driver: advert)

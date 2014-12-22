@@ -1,6 +1,5 @@
-from pages.MainPage import MainPage
 
-
+#страница авторизации
 class AutorizPage(object):
 
     def __init__(self, driver):

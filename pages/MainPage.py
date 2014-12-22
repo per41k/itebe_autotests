@@ -1,3 +1,5 @@
+
+#главная страница
 class MainPage(object):
 
     def __init__(self, driver):

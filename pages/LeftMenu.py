@@ -1,7 +1,7 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 
-
+#страница меню навигации по сайту
 class LeftMenu(object):
 
     def __init__(self, driver):

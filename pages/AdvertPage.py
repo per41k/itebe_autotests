@@ -1,3 +1,4 @@
+#страинца объявления
 class AdvertPage(object):
 
     def __init__(self, driver):

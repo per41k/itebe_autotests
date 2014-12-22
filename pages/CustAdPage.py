@@ -1,8 +1,5 @@
 
 #страница списка объявлений о покупке
-from selenium.webdriver.support.wait import WebDriverWait
-
-
 class CustAdPage(object):
 
     def __init__(self, driver):
