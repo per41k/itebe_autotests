@@ -8,6 +8,7 @@ class CreateAdBuyPage(object):
         self.driver = driver
         self.current_rubric = driver.find_element_by_xpath("//span[@id='h1']") #
         self.attach_photo_button = driver.find_element_by_xpath("//a[@class='w_dload_pc']") #
+        self.check_button = driver.find_element_by_xpath("//input[@type='submit']") #кнопка "Проверить"
 
     #получить название текущей рубрики
     def getCurrentRubric(self):
@@ -25,3 +26,6 @@ class CreateAdBuyPage(object):
         photo_name_element = self.driver.find_element_by_xpath("//div[@class='if1 fi']")
         if len( photo_name_element.text) !=0: return True
         else: return False
+
+    #кликнуть "Проверить"
+    def clickCheckButon(self): self.check_button.click()

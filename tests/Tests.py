@@ -35,18 +35,20 @@ class Test(unittest.TestCase):
     #разместить объявление
     #найти свое объявление в ЛК
     #а также, что другиие юзеры могут найти это объявление и связаться через сервис сообщений
-    #с его владельцем для заключения сделки
+    # с его владельцем для заключения сделки
 
     def Tests(self):
 
         log1="test_customer1"
         log2="test_seller"
         pas="123qwerty"
+
         #авторизируемся
         AutorizPage(self.driver).login(log1, pas)
+
         #проверяем, что действительно вошли по этому логину
         assert log1 in MainPage(self.driver).getUsername()
-        LeftMenu(self.driver).getCurrentRole()
+
 
         role="продавец"
         # ставим роль "продавец"
@@ -99,7 +101,8 @@ class Test(unittest.TestCase):
         price="234"
         CreateAdBuyMotorbikePage(self.driver).setPrice(price)
 
-        CreateAdBuyMotorbikePage(self.driver).clickCheckButon()
+        #кликаем "Проверить"
+        CreateAdBuyPage(self.driver).clickCheckButon()
 
         # а тут проверяем, что все, что ммы вводили, совпадает с тем, что сейчас отображается
         # на странице завершения создания объявления
@@ -113,6 +116,7 @@ class Test(unittest.TestCase):
 
         #завершаем создание объявления
         IssueAdPage(self.driver).finishCreateIssue()
+
         #запоминаем id нашего объявления
         advert_id=AdvertPage(self.driver).getId()
 
@@ -122,7 +126,7 @@ class Test(unittest.TestCase):
         # находим наше объявление в ЛК по id
         self.assertTrue(MyStockPage(self.driver).isAdvertPresent(advert_id))
 
-        #перелогиниваемся под другим юзером
+        #перелогиниваемся под другим юзером (пароли у юзеров одинаковые)
         MainPage(self.driver).logOut()
         AutorizPage(self.driver).login(log2, pas)
 

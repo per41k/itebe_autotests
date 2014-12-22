@@ -9,7 +9,6 @@ class CreateAdBuyMotorbikePage(object):
         self.model_field = driver.find_element_by_xpath("//input[@id='model']") #поле ввода модели
         self.description_field = driver.find_element_by_xpath("//textarea") #поле ввода дополнительного описания
         self.price_field = driver.find_element_by_xpath("//input[@name='p']") #поле ввода цены
-        self.check_button = driver.find_element_by_xpath("//input[@type='submit']") #кнопка "Проверить"
 
     #выбрать модель из списка
     def setModelFromSelect(self, molel):
@@ -45,5 +44,3 @@ class CreateAdBuyMotorbikePage(object):
         self.price_field.clear()
         self.price_field.send_keys(price)
 
-    #кликнуть "Проверить"
-    def clickCheckButon(self): self.check_button.click()
