@@ -6,8 +6,8 @@ class CreateAdBuyPage(object):
 
     def __init__(self, driver):
         self.driver = driver
-        self.current_rubric = driver.find_element_by_xpath("//span[@id='h1']") #
-        self.attach_photo_button = driver.find_element_by_xpath("//a[@class='w_dload_pc']") #
+        self.current_rubric = driver.find_element_by_xpath("//span[@id='h1']") #текущая рубрика
+        self.attach_photo_button = driver.find_element_by_xpath("//a[@class='w_dload_pc']") #кпока "Загрузить" загружает фотки
         self.check_button = driver.find_element_by_xpath("//input[@type='submit']") #кнопка "Проверить"
 
     #получить название текущей рубрики
